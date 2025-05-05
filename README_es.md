@@ -72,7 +72,7 @@ Cuando empecé a trabajar con este sistema de gestión de targets, me encontré 
 
   * También añadí una limpieza automática: si el archivo `targets.env` no existe, las variables se eliminan del entorno para evitar datos antiguos o confusión.
 
-Este bloque en `.zshrc` es clave para que todo el sistema funcione de manera transparente y sin intervención manual. Al principio parecía innecesario, pero tras varias pruebas descubrí que era la única forma de asegurarme de que las variables estuvieran siempre disponibles y actualizadas en cualquier momento.
+Este bloque en `.zshrc` es clave para que todo el sistema funcione de manera transparente y sin intervención manual. Al principio parecía innecesario, pero tras varias pruebas descubrí que era la única forma que encontré de asegurarme de que las variables estuvieran siempre disponibles y actualizadas en cualquier momento.
 
 ---
 
