@@ -35,7 +35,7 @@ settarget() {
       EXISTING_VAR=$(echo "$EXISTING_LINE" | cut -d'=' -f1)
       EXISTING_INDEX=$(echo "$EXISTING_VAR" | sed 's/export target//')
       EXISTING_ALIAS=$(grep -E "^export alias${EXISTING_INDEX}=" "$TARGETS_FILE" | cut -d'=' -f2- | tr -d '"')
-      echo "⚠ La IP $IP ya está registrada como ${EXISTING_VAR} (alias: ${EXISTING_ALIAS:-<sin alias>})"
+      echo "La IP $IP ya está registrada como ${EXISTING_VAR} (alias: ${EXISTING_ALIAS:-<sin alias>})"
       return 1
     fi
 
@@ -45,7 +45,7 @@ settarget() {
         EXISTING_ALIAS_LINE=$(grep -E "^export alias[0-9]+=\"$ALIAS\"" "$TARGETS_FILE")
         EXISTING_INDEX=$(echo "$EXISTING_ALIAS_LINE" | sed 's/^export alias\([0-9]\+\)=.*/\1/')
         EXISTING_IP=$(grep "^export target${EXISTING_INDEX}=" "$TARGETS_FILE" | cut -d'=' -f2- | tr -d '"')
-        echo "⚠ El alias $ALIAS ya está en uso para la IP $EXISTING_IP"
+        echo "El alias $ALIAS ya está en uso para la IP $EXISTING_IP"
         return 1
       fi
     fi
